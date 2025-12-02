@@ -64,7 +64,7 @@ const breakpoints = {
 
                         <div class="card">
                             <div class="img">
-                                <img :src="`/img/${key.img}`" :alt="key.name">
+                                <img :src="`/img/products/${key.img}`" :alt="key.name">
 
                             </div>
                             <div class="card-body">

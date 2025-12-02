@@ -279,7 +279,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 30%;
+    width: 40%;
 }
 
 form {

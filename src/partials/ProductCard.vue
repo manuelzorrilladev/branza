@@ -10,9 +10,9 @@ const parsedProduct = ProductsList[product.product]
 
 <template>
     <div class="card">
-        <img v-if="parsedProduct.name == 'Adecoagro'" :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name" class="adecoagro">
-        <img v-else-if="parsedProduct.name == 'Formidable'" :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name" class="formidable">
-        <img v-else :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name">
+        <img v-if="parsedProduct.name == 'Adecoagro'" :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="adecoagro">
+        <img v-else-if="parsedProduct.name == 'Formidable'" :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="formidable">
+        <img v-else :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name">
         
         <div class="card-text">
             <h1>
@@ -49,6 +49,7 @@ const parsedProduct = ProductsList[product.product]
 .card .card-text{
     display: flex;
     flex-direction: column;
+    text-align: center;
 
 }
 h1{
@@ -74,6 +75,8 @@ button{
     border-radius: 5px;
     cursor:pointer;
     transition: 0.3s;
+    margin-top: 5px;
+
 }
 button:hover{
     background: #192753;

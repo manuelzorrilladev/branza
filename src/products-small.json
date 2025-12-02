@@ -1,6 +1,6 @@
 {
     "vitale-completa":{
-        "name":"Leche Vittale en polvo entera",
+        "name":"Leche Vittale en polvo entera 30gr",
         "type":"Leche Entera",
         "description":"Leche entera en polvo al 26%",
         "weight":"30gr",
@@ -10,11 +10,31 @@
         "icon": "venezuela.png"
     },
     "vitale-descremada":{
-        "name":"Leche Vittale en polvo descremada",
+        "name":"Leche Vittale en polvo descremada 30gr",
         "type":"Leche Descremada",
         "description":"Leche entera descremada al 1% con Vitaminas A y B3",
         "weight":"30gr",
         "img":"vitale-sobre-descremada.png",
+        "country":"Venezuela",
+        "tag":"masivo",
+        "icon": "venezuela.png"
+    },
+    "vitale-grande-completa":{
+        "name":"Leche Vittale en polvo entera 360gr",
+        "type":"Leche Entera",
+        "description":"Leche entera en polvo al 26%",
+        "weight":"360gr",
+        "img":"vitale-grande-sobre.png",
+        "country":"Venezuela",
+        "tag":"masivo",
+        "icon": "venezuela.png"
+    },
+    "vitale-grande-descremada":{
+        "name":"Leche Vittale en polvo descremada 360gr",
+        "type":"Leche Descremada",
+        "description":"Leche entera descremada al 1% con Vitaminas A y B3",
+        "weight":"360gr",
+        "img":"vitale-grande-sobre-descremada.png",
         "country":"Venezuela",
         "tag":"masivo",
         "icon": "venezuela.png"

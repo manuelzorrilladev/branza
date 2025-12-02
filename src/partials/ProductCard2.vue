@@ -10,7 +10,7 @@ const parsedProduct = ProductsList[product.product]
     <div class="card">
 
         <div class="img">
-            <img :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name">
+            <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name">
         </div>
         
         <div class="card-text">
@@ -56,6 +56,7 @@ const parsedProduct = ProductsList[product.product]
 .card .card-text{
     display: flex;
     flex-direction: column;
+    text-align: center;
 
 }
 h1{
@@ -81,6 +82,7 @@ button{
     border-radius: 5px;
     cursor:pointer;
     transition: 0.3s;
+    margin-top: 5px;
 }
 button:hover{
     background: #192753;

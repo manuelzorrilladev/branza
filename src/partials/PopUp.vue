@@ -35,7 +35,7 @@ const emitPopUp = () => {
 
                     <div class="img-side desktop-only">
 
-                        <img :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
+                        <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
 
                         <div class="share-container">
                             <h4>Compartir en:</h4>
@@ -64,7 +64,7 @@ const emitPopUp = () => {
                         <h1 class="title">Leche {{ parsedProduct.name }}</h1>
                         <div class="img-side mobile-only">
 
-                            <img :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
+                            <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
 
                             <div class="share-container">
                                 <h4>Compartir en:</h4>

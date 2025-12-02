@@ -29,7 +29,7 @@ watch(product, () => {
 
                     <div class="img-side desktop-only">
 
-                        <img :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
+                        <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
 
                         <div class="share-container">
                             <h4>Compartir en:</h4>
@@ -61,7 +61,7 @@ watch(product, () => {
                         <h1 class="title">{{ parsedProduct.name }}</h1>
                         <div class="img-side mobile-only">
 
-                            <img :src="`/img/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
+                            <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
 
                             <div class="share-container">
                                 <h4>Compartir en:</h4>
@@ -88,10 +88,10 @@ watch(product, () => {
                             <li>
                                 <img src="/img/icono-2.png" alt="icono" class="icon-img">
                                 <div class="line-text">
-                                    <h2><strong> Presentación: </strong></h2>
-                                    <h3>Bolsa multipliego de papel Kraft con bolsa de polietileno interior de 25 kg.</h3>
+                                    <h2><strong> Descripción: </strong></h2>
+                                    <h3>{{parsedProduct.description}}</h3>
                                 </div>
-                            </li>
+                           </li>
 
 
                             <li>
