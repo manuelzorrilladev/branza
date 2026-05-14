@@ -1,0 +1,102 @@
+{
+    "magnalat": {
+        "name": "Magnalat ",
+        "type": "Leche entera",
+        "description": "Leche entera en polvo al 26%",
+        "weight": "25kg",
+        "img": "magnalat.png",
+        "country": "Uruguay",
+        "icon": "uruguay.png",
+        "doc": "false"
+    },
+    "adecoagro": {
+        "name": "AdecoAgro",
+        "type": "Leche entera",
+        "description": "Leche entera en polvo al 26%",
+        "weight": "25kg",
+        "img": "adecoagro.png",
+        "country": "Argentina",
+        "icon": "argentina.png",
+        "doc": "Ficha-Tecnica-AdecoAgro"
+    },
+    "conaprole": {
+        "name": "Conaprole",
+        "type": "Leche entera",
+        "description": "Leche entera en polvo al 26%",
+        "weight": "25kg",
+        "img": "conaprole.png",
+        "country": "Uruguay",
+        "icon": "uruguay.png",
+        "doc": "Ficha-Tecnica-Conaprole"
+    },
+    "formidable": {
+        "name": "Formidable",
+        "type": "Leche entera",
+        "description": "Leche entera en polvo al 26%",
+        "weight": "25kg",
+        "img": "formidable.png",
+        "country": "Uruguay",
+        "icon": "uruguay.png",
+        "doc": "Ficha-Tecnica-Formidable"
+    },
+    "conaprole-suero": {
+        "name": "Conaprole",
+        "type": "Suero de Leche",
+        "description": "Suero dulce de leche",
+        "weight": "25kg",
+        "img": "conaprole-suero.png",
+        "country": "Chile",
+        "icon": "uruguay.png",
+        "doc": "Ficha-Tecnica-suero-Conaprole"
+    },
+    "pil": {
+        "name": "Pil",
+        "type": "Leche entera",
+        "description": "Producto lácteo de alta pureza obtenido mediante procesos controlados de pasteurización y secado por atomización.",
+        "weight": "25kg",
+        "img": "pil.png",
+        "country": "Bolivia",
+        "icon": "bolivia.png",
+        "doc": "Ficha-tecnica-PIL"
+    },
+    "high-desert": {
+        "name": "High Desert",
+        "type": "Leche descremada",
+        "description": "Leche descremada de baja temperatura grado 'A'",
+        "weight": "25kg",
+        "img": "high-desert.png",
+        "country": "Estados Unidos",
+        "icon": "united-states.png",
+        "doc": "false"
+    },
+    "high-desert-proteina": {
+        "name": "High Desert",
+        "type": "Proteína de leche en polvo",
+        "description": "Proteína de leche concentrada en polvo",
+        "weight": "25kg",
+        "img": "high-desert-2.png",
+        "country": "Estados Unidos",
+        "icon": "united-states.png",
+        "doc": "Ficha-tecnica-high-dessert-proteina"
+    },
+    "induleche": {
+        "name": "Induleche",
+        "type": "Leche Entera",
+        "description": "Leche Entera en polvo",
+        "weight": "25kg",
+        "img": "induleche.png",
+        "country": "Colombia",
+        "icon": "colombia.png",
+        "doc": "false"
+    },
+    "sooro": {
+        "name": "Sooro",
+        "type": "Suero de Leche",
+        "description": "Suero de leche parcialmente desmineralizado",
+        "weight": "25kg",
+        "img": "sooro.png",
+        "country": "Brasil",
+        "icon": "brasil.png",
+        "doc": "false"
+    }
+}

@@ -51,16 +51,19 @@
         "icon":"uruguay.png",
         "doc":"Ficha-Tecnica-suero-Conaprole"
     },
-    "us-dairy":{
-        "name":"Dairy America",
-        "type":"Leche descremada",
-        "description":"Leche descremada de baja temperatura grado 'A'",
+
+
+    "pil":{
+        "name":"Pil",
+        "type":"Leche entera",
+        "description":"Producto lácteo de alta pureza obtenido mediante procesos controlados de pasteurización y secado por atomización.",
         "weight":"25kg",
-        "img":"us-dairy.png",
-        "country":"Estados Unidos",
-        "icon":"united-states.png",
-        "doc":"Ficha-Tecnica-suero-US-Diary"
+        "img":"pil.png",
+        "country":"Bolivia",
+        "icon":"bolivia.png",
+        "doc":"Ficha-tecnica-PIL"
     },
+
     "high-desert":{
         "name":"High Desert",
         "type":"Leche descremada",

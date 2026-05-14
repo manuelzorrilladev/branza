@@ -5,11 +5,17 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 import PopUp from '../partials/PopUp.vue'
-import products from '../products.json'
+import fetchProducts from '../fetchProducts'
 
 
+const products = ref([]);
+const isReady = ref(false);
 
+const activeProduct = ref("none");
 
+function activateProduct(object) {
+  activeProduct.value = object;
+}
 const popUp = ref(0)
 const filter = ref(false)
 
@@ -44,12 +50,17 @@ const breakpoints = {
       }
     }
 
+
+onMounted(async()=>{
+    products.value = await fetchProducts().then((isReady.value = true));
+    console.log(products.value);
+})
 </script>
 
 <template>
     <div class="slider">
         <div class="slider-container">
-            <PopUp :product="popUp" @activate-pop-up="activatePopUp" />
+            <PopUp v-if="activeProduct != 'none'" :product="activeProduct" @activate-pop-up="activateProduct"  />
 
             <Carousel  
                 class="carousel-container" 
@@ -60,7 +71,7 @@ const breakpoints = {
                 >
                 <Slide v-for="(key,index) in products" :key="index">
 
-                    <div class="normal" @click="activatePopUp(index)">
+                    <div class="normal" @click="activateProduct(key)">
 
                         <div class="card">
                             <div class="img">

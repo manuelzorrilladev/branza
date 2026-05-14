@@ -1,531 +1,537 @@
 <script setup>
-import { ref, watch } from "vue";
 import { RouterLink } from "vue-router";
 
-import ProductsList from "../products.json"
-
-const emit = defineEmits(['activate-pop-up'])
-const product = defineProps(["product"])
-
-const referenceProduct = ref(product.product)
-
-let parsedProduct = ProductsList[product.product]
-
-watch(product, () => {
-    referenceProduct.value = product.product
-    parsedProduct = ProductsList[product.product]
-    console.log(referenceProduct.value)
-})
+const emit = defineEmits(["activate-pop-up"]);
+const product = defineProps(["product"]);
 
 const emitPopUp = () => {
-    emit('activate-pop-up', 0)
-}
-
-
-
+  emit("activate-pop-up", "none");
+};
 </script>
 
 <template>
-    <div v-if="referenceProduct != 0" class="container">
-        <div class="pop-up-card-container">
+  <div class="container">
+    <div class="pop-up-card-container">
+      <div class="card-container">
+        <div class="info">
+          <div class="img-side desktop-only">
+            <img
+              :src="`/img/products/${product.product.img}`"
+              :alt="product.product.name"
+              class="product-img"
+            />
+            <div class="share-container">
+              <h4>Compartir en:</h4>
 
-            <div class="card-container">
+              <div class="share-links">
+                <a
+                  href="https://www.facebook.com/branzafoods/"
+                  target="_blank"
+                  class="share-button"
+                >
+                  <font-awesome-icon
+                    :icon="['fab', 'facebook-f']"
+                    class="share-icons"
+                  />
+                </a>
 
-                <div class="info">
+                <a
+                  href="https://www.instagram.com/branzafoods"
+                  target="_blank"
+                  class="share-button"
+                >
+                  <font-awesome-icon
+                    :icon="['fab', 'instagram']"
+                    class="share-icons"
+                  />
+                </a>
 
-                    <div class="img-side desktop-only">
-
-                        <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
-
-                        <div class="share-container">
-                            <h4>Compartir en:</h4>
-
-                            <div class="share-links">
-                                <a href="https://www.facebook.com/branzafoods/" target="_blank" class="share-button">
-                                    <font-awesome-icon :icon="['fab', 'facebook-f']" class="share-icons" />
-                                </a>
-
-                                <a href="https://www.instagram.com/branzafoods" target="_blank" class="share-button">
-                                    <font-awesome-icon :icon="['fab', 'instagram']" class="share-icons" />
-
-                                </a>
-
-                                <a href="https://www.x.com/branzafoods" target="_blank" class="share-button">
-                                    <font-awesome-icon :icon="['fab', 'x-twitter']" class="share-icons" />
-                                </a>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="text-side">
-
-                        <h1 class="title">Leche {{ parsedProduct.name }}</h1>
-                        <div class="img-side mobile-only">
-
-                            <img :src="`/img/products/${parsedProduct.img}`" :alt="parsedProduct.name" class="product-img">
-
-                            <div class="share-container">
-                                <h4>Compartir en:</h4>
-
-                                <div class="share-links">
-                                    <a href="https://www.facebook.com/branzafoods/" target="_blank" class="share-button">
-                                        <font-awesome-icon :icon="['fab', 'facebook-f']" class="share-icons" />
-                                    </a>
-
-                                    <a href="https://www.instagram.com/branzafoods" target="_blank" class="share-button">
-                                        <font-awesome-icon :icon="['fab', 'instagram']" class="share-icons" />
-
-                                    </a>
-
-                                    <a href="https://www.x.com/branzafoods" target="_blank" class="share-button">
-                                        <font-awesome-icon :icon="['fab', 'x-twitter']" class="share-icons" />
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <ul>
-                            <li>
-                                <img src="/img/icono-2.png" alt="icono" class="icon-img">
-                                <div class="line-text">
-                                    <h2><strong> Presentación: </strong></h2>
-                                    <h3>Bolsa multipliego de papel Kraft con bolsa de polietileno interior de 25 kg.
-                                    </h3>
-                                </div>
-                            </li>
-
-
-                            <li>
-                                <img src="/img/icono-1.png" alt="icono" class="icon-img">
-                                <div class="line-text">
-                                    <h2><strong> Características: </strong></h2>
-                                    <h3>{{ parsedProduct.description }}</h3>
-                                </div>
-                            </li>
-
-                            <li>
-                                <img src="/img/icono-3.png" alt="icono" class="icon-img">
-                                <div class="line-text">
-                                    <h2><strong> País: </strong></h2>
-                                    <img :src="`/img/${parsedProduct.icon}`" alt="icono" class="icon-img">
-                                </div>
-                            </li>
-
-
-                            <li class="socials">
-                                <a href="https://wa.me/584142665125" class="green button">
-                                    Contacta para Comprar <font-awesome-icon :icon="['fab', 'whatsapp']" />
-
-                                </a>
-
-                                <RouterLink v-if="parsedProduct.doc != 'false'" :to="parsedProduct.doc"
-                                    class="green button">
-                                    Ficha Técnica
-                                </RouterLink>
-                                <button @click="emitPopUp" class="blue button">
-                                    Volver
-                                    <font-awesome-icon :icon="['fas', 'backward']" />
-                                </button>
-
-
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
+                <a
+                  href="https://www.x.com/branzafoods"
+                  target="_blank"
+                  class="share-button"
+                >
+                  <font-awesome-icon
+                    :icon="['fab', 'x-twitter']"
+                    class="share-icons"
+                  />
+                </a>
+              </div>
             </div>
+          </div>
+
+          <div class="text-side">
+            <h1 class="title">
+              {{ product.product.type }} Marca {{ product.product.name }}
+            </h1>
+            <div class="img-side mobile-only">
+              <img
+                :src="`/img/products/${product.product.img}`"
+                :alt="product.product.name"
+                class="product-img"
+              />
+
+              <div class="share-container">
+                <h4>Compartir en:</h4>
+
+                <div class="share-links">
+                  <a
+                    href="https://www.facebook.com/branzafoods/"
+                    target="_blank"
+                    class="share-button"
+                  >
+                    <font-awesome-icon
+                      :icon="['fab', 'facebook-f']"
+                      class="share-icons"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/branzafoods"
+                    target="_blank"
+                    class="share-button"
+                  >
+                    <font-awesome-icon
+                      :icon="['fab', 'instagram']"
+                      class="share-icons"
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.x.com/branzafoods"
+                    target="_blank"
+                    class="share-button"
+                  >
+                    <font-awesome-icon
+                      :icon="['fab', 'x-twitter']"
+                      class="share-icons"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <ul>
+              <li>
+                <img src="/img/icono-2.png" alt="icono" class="icon-img" />
+                <div class="line-text">
+                  <h2><strong> Presentación: </strong></h2>
+                  <h3>
+                    Bolsa multipliego de papel Kraft con bolsa de polietileno
+                    interior de 25 kg.
+                  </h3>
+                </div>
+              </li>
+
+              <li>
+                <img src="/img/icono-1.png" alt="icono" class="icon-img" />
+                <div class="line-text">
+                  <h2><strong> Características: </strong></h2>
+                  <h3>{{ product.product.description }}</h3>
+                </div>
+              </li>
+
+              <li>
+                <img src="/img/icono-3.png" alt="icono" class="icon-img" />
+                <div class="line-text">
+                  <h2><strong> País: </strong></h2>
+                  <img
+                    :src="`/img/${product.product.icon}`"
+                    alt="icono"
+                    class="icon-img"
+                  />
+                </div>
+              </li>
+
+              <li class="socials">
+                <a href="https://wa.me/584142665125" class="green button">
+                  Contacta para Comprar
+                  <font-awesome-icon :icon="['fab', 'whatsapp']" />
+                </a>
+
+                <RouterLink
+                  v-if="product.product.doc != 'false'"
+                  :to="product.product.doc"
+                  class="green button"
+                >
+                  Ficha Técnica
+                </RouterLink>
+                <button @click="emitPopUp" class="blue button">
+                  Volver
+                  <font-awesome-icon :icon="['fas', 'backward']" />
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer">
-            <img src="/img/logo-blanco.png" alt="branza-logo">
-            <h5>Branza &#8482; - Todos los derechos reservados</h5>
-        </div>
+      </div>
     </div>
+    <div class="footer">
+      <img src="/img/logo-blanco.png" alt="branza-logo" />
+      <h5>Branza &#8482; - Todos los derechos reservados</h5>
+    </div>
+  </div>
 </template>
 
 <style scoped>
-
-.mobile-only{
-    display: none !important;
+.mobile-only {
+  display: none !important;
 }
 
 .pop-up-card-container {
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 40;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-container {
-    border: 1px solid #bababa;
-    padding: 20px 50px;
-    border-radius: 15px;
+  border: 1px solid #bababa;
+  height: 60%;
+  padding: 20px 50px 40px 50px;
+  border-radius: 15px;
 }
 
 .card-container .info {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #30449b;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #30449b;
 }
 
 .img-side {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .img-side .product-img {
-    filter: drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.7));
-    max-width: 190px;
-    min-width: 190px;
+  filter: drop-shadow(10px 15px 20px rgba(0, 0, 0, 0.7));
+  max-width: 170px;
+  width: 120px;
+  min-width: 100px;
 }
 
 .share-container {
-    width: 100%;
-    height: 1%;
-
+  width: 100%;
+  height: 1%;
 }
 
 .share-container h4 {
-    text-align: center;
+  text-align: center;
 }
 
 .share-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .share-button {
-    height: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: 0.4s ease-in-out;
-    color: #30449b;
-    cursor: pointer;
-    background: #f0f0f0;
-    padding: 10px 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: 0.4s ease-in-out;
+  color: #30449b;
+  cursor: pointer;
+  background: #f0f0f0;
+  padding: 10px 20px;
 }
 
 .share-button:hover {
-
-    background: #30449b;
-    color: white;
+  background: #30449b;
+  color: white;
 }
 
-
 .title {
-    border-radius: 15px;
-    line-height: 48px;
-    padding: 10px 0px 10px 0px !important;
-
+  border-radius: 15px;
+  padding: 10px 0px 10px 0px !important;
 }
 
 .text-side {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
 h1 {
-    font-size: 30pt;
-    font-weight: 900;
-    text-align: center;
-
+  font-size: 20pt;
+  font-weight: 900;
+  text-align: center;
 }
 
 h2 {
-    font-size: 15pt;
+  font-size: 12pt;
 }
 
 h3 {
-    font-size: 10pt;
-    font-weight: 400;
+  font-size: 9pt;
+  font-weight: 400;
 }
 
 .text-side ul li {
-    font-size: 14pt;
-    font-weight: 400;
-    list-style-type: none;
-    padding: 3px 0px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0px;
+  font-size: 14pt;
+  font-weight: 400;
+  list-style-type: none;
+  padding: 1px 0px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0px;
 }
 
 .socials {
-    flex-direction: column;
-    width: 100%;
+  flex-direction: column;
+  width: 100%;
 }
 
 .icon-img {
-    width: 50px;
-    height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 ul {
-    width: 100%;
+  width: 100%;
 }
 
 strong {
-    font-weight: 900;
+  font-weight: 900;
 }
 
-
-
-
-
-
-
 .button {
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: 0.4s ease-in-out;
-    color: #30449b;
-    cursor: pointer;
-    background: #f0f0f0;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    text-decoration: none;
-    font-size: medium;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: 0.4s ease-in-out;
+  color: #30449b;
+  cursor: pointer;
+  background: #f0f0f0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: medium;
 }
 
 .button:hover {
-    background: #30449b;
-    color: white;
+  background: #30449b;
+  color: white;
 }
-
 
 .active {
-    display: block;
+  display: block;
 }
 
-
 .show {
-    display: block;
+  display: block;
 }
 
 .country {
-    width: 20px;
+  width: 15px;
 }
 
 .none {
-    display: none;
+  display: none;
 }
 
 .footer {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background: #30449b;
-    color: white;
-    padding: 5px;
-    gap: 10px;
-    z-index: 50;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #30449b;
+  color: white;
+  padding: 5px;
+  gap: 10px;
+  z-index: 50;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer img {
-    width: 100px;
-    height: 50px;
+  width: 100px;
+  height: 50px;
 }
 
 @media (min-width: 2000px) {
-    .img-side .product-img {
-        max-width: 500px;
-        min-width: 500px;
-    }
+  .img-side .product-img {
+    max-width: 500px;
+    min-width: 500px;
+  }
 
-    .text-side ul li {
-        margin: 40px 0px;
-    }
+  .text-side ul li {
+    margin: 40px 0px;
+  }
 
-    .footer h5 {
-        font-size: 20pt
-    }
+  .footer h5 {
+    font-size: 20pt;
+  }
 
-    .footer img {
-        width: 150px;
-        height: 75px;
-    }
+  .footer img {
+    width: 150px;
+    height: 75px;
+  }
 
-    .share-button {
-        height: 35px;
+  .share-button {
+    height: 35px;
+  }
 
-    }
+  .button {
+    font-size: 15pt;
+  }
 
-    .button {
-        font-size: 15pt;
-    }
+  .share-icons {
+    font-size: 35px;
+  }
 
-    .share-icons {
-        font-size: 35px;
-    }
+  h1 {
+    font-size: 60pt;
+  }
 
-    h1 {
-        font-size: 60pt;
+  h2 {
+    font-size: 30pt;
+  }
 
-    }
+  h3 {
+    font-size: 20pt;
+    font-weight: 400;
+  }
 
-    h2 {
-        font-size: 30pt;
-    }
-
-    h3 {
-        font-size: 20pt;
-        font-weight: 400;
-    }
-
-    h4 {
-        font-size: 20pt;
-    }
-
-
-
+  h4 {
+    font-size: 20pt;
+  }
 }
 
 @media (max-width: 1100px) {
-    .card-container {
-        width: 90%;
-        padding: 20px 0px;
+  .card-container {
+    width: 90%;
+    padding: 20px 0px;
+  }
 
-    }
+  .card-container .info {
+    justify-content: space-evenly;
+  }
 
-    .card-container .info {
-        justify-content: space-evenly;
-    }
+  .title {
+    font-size: 30pt !important;
+  }
 
-    .title {
-        font-size: 30pt !important;
-    }
+  h2 {
+    font-size: 14pt !important;
+  }
 
-    h2 {
-        font-size: 14pt !important;
+  h3 {
+    font-size: 10pt !important;
+  }
 
-    }
+  .text-side {
+    gap: 0px;
+    justify-content: center;
+  }
 
-    h3 {
-        font-size: 10pt !important;
+  .text-side ul li {
+    margin: 0px;
+  }
 
-    }
+  .product-img {
+    max-width: 180px !important;
+    min-width: 180px !important;
+  }
 
-    .text-side {
-        gap: 0px;
-        justify-content: center;
-    }
+  .button {
+    font-size: small;
+  }
 
-    .text-side ul li {
-        margin: 0px;
-    }
-
-    .product-img {
-        max-width: 180px !important;
-        min-width: 180px !important;
-    }
-
-    .button {
-        font-size: small;
-    }
-
-    .product {
-        max-width: 15vw !important;
-    }
-
+  .product {
+    max-width: 15vw !important;
+  }
 }
 
 @media (max-width: 650px) {
-    .desktop-only{
-        display: none !important;
-    }
-    .mobile-only{
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
     display: flex !important;
-        
-    }
-    .card-container {
-        border: none;
-    }
+  }
+  .card-container {
+    border: none;
+  }
+  .pop-up-card-container {
+    align-items: start;
+    padding-top: 30px;
+  }
+  .card-container .info {
+    flex-direction: column;
+  }
 
-    .card-container .info {
-        flex-direction: column;
-    }
+  .share-container {
+    display: none;
+  }
 
-    .share-container {
-        display: none;
-    }
+  .share-links {
+    flex-direction: column;
+  }
 
-    .share-links {
-        flex-direction: column;
-    }
+  .text-side {
+    width: 100%;
+    height: fit-content;
+  }
 
-    .text-side {
-        width: 100%;
-        height: fit-content;
-    }
+  .img-side {
+    flex-direction: row;
+  }
 
-    .img-side {
-        flex-direction: row;
-    }
+  .icon-img {
+    width: 25px;
+    height: 25px;
+  }
+  ul {
+    padding:15px 0px ;
+    padding-bottom: 20px;
+}
+  .button {
+    height: 30px;
+  }
 
-    .icon-img {
-        width: 25px;
-        height: 25px;
-    }
+  .title {
+    font-size: 20pt !important;
+  }
 
-    .button {
-        height: 30px;
-    }
+  h2 {
+    font-size: 14pt !important;
+  }
 
+  h3 {
+    font-size: 10pt !important;
+  }
 
-    .title {
-        font-size: 20pt !important;
-    }
+  .product-img {
+    max-width: 100px !important;
+    padding: 10px 0px;
+    min-width: 100px !important;
+  }
 
-    h2 {
-        font-size: 14pt !important;
-
-    }
-
-    h3 {
-        font-size: 10pt !important;
-
-    }
-
-    .product-img {
-        max-width: 100px !important;
-        min-width: 100px !important;
-    }
-
-
+  .footer img {
+    width: 80px;
+    height: 40px;
+  }
 }
 </style>
-
