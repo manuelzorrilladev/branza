@@ -9,24 +9,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/vue-fontawesome": "^3.0.5",
-    "@lucien144/vue3-parallaxy": "^0.1.1",
-    "@tato30/vue-pdf": "^1.9.0",
-    "@vueuse/motion": "^2.0.0",
+    "@emailjs/browser": "^3.12.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.3.3",
+    "@lucien144/vue3-parallaxy": "^0.1.2",
+    "@tato30/vue-pdf": "^1.11.5",
+    "@vueuse/motion": "^2.2.6",
     "pdfvuer": "^2.0.1",
-    "vue": "^3.3.4",
+    "vue": "^3.5.42",
     "vue-cookie-accept-decline": "^6.1.0",
-    "vue-router": "^4.2.5",
-    "vue3-carousel": "^0.3.1",
-    "vue3-lottie": "^3.2.0"
+    "vue-router": "^4.6.4",
+    "vue3-carousel": "^0.17.0",
+    "vue3-lottie": "^3.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "vite": "^4.4.5"
+    "@vitejs/plugin-vue": "^4.6.2",
+    "vite": "^4.5.14"
   }
 }
