@@ -3,7 +3,7 @@
 <template>
     <footer>
         <img src="/img/logo-blanco.png" alt="branza-logo">
-        <h5>Branza	&#8482; - Todos los derechos reservados</h5>
+        <h5>Branza	&#8482; J-400838843 - Todos los derechos reservados</h5>
     </footer>
 </template>
 

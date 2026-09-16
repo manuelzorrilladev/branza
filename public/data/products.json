@@ -29,6 +29,16 @@
         "icon": "uruguay.png",
         "doc": "Ficha-Tecnica-Conaprole"
     },
+    "v-humana": {
+        "name": "V-Humana",
+        "type": "Leche descremada",
+        "description": "Leche en Polvo Descremada",
+        "weight": "25kg",
+        "img": "v-humana.png",
+        "country": "Portugal",
+        "icon": "portugal.png",
+        "doc": "Ficha-Tecnica-v-humana"
+    },
     "formidable": {
         "name": "Formidable",
         "type": "Leche entera",

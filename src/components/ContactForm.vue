@@ -23,8 +23,8 @@ function clearAll() {
 function sendEmail() {
     emit('change-note')
 
-    emailjs.init("zDxl6gzN1u4NE1xiW");
-    emailjs.send("service_f9vepwz", "template_98947n9", {
+    emailjs.init("ZW9HU7fRsG4rIrQbu");
+    emailjs.send("service_wgvla39", "template_eoolfrn", {
         name: name.value,
         message: message.value,
         email: email.value,

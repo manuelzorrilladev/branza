@@ -117,7 +117,7 @@ const emitPopUp = () => {
                   <h2><strong> Presentación: </strong></h2>
                   <h3>
                     Bolsa multipliego de papel Kraft con bolsa de polietileno
-                    interior de 25 kg.
+                    interior de {{product.product.weight}}.
                   </h3>
                 </div>
               </li>
